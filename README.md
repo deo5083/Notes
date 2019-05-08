@@ -1,2 +1,2 @@
 # Notes
-App to learn Redux and practice ReactJS
+Web app to learn Redux and practice ReactJS
