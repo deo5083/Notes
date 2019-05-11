@@ -1,5 +1,5 @@
 import React from 'react'
-import {Search} from './Search';
+import Search from './Search';
 
 
 export class Toolbar extends React.Component{
@@ -19,7 +19,7 @@ export class Toolbar extends React.Component{
                 </div>
 
                 <div className="col-md-9">
-                    col-8
+                    [Toolbar]
                 </div>
             </div>
         );

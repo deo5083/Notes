@@ -1,6 +1,9 @@
 import React from 'react';
 import {Toolbar} from './Toolbar';
-//import '../style/App.css';
+import List from './List';
+import Editor from './Editor';
+
+import '../style/styles.css';
 
 function App() {
   return (
@@ -12,12 +15,12 @@ function App() {
      
       <hr/>
 
-      <div className="row">
+      <div className="row expand">
         <div className="col-md-3">
-          col-4
+          <List />
         </div>
         <div className="col-md-9">
-          col-8
+          <Editor />
         </div>
 
       </div>
