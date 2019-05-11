@@ -1,7 +1,6 @@
 import React from 'react'
 import Search from './Search';
 
-
 export class Toolbar extends React.Component{
     render() {
         return (

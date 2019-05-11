@@ -2,3 +2,27 @@
     height:80vh;
 }
 
+.editor{
+    height:80vh;
+}
+
+.scrollable {
+    overflow-y: auto;
+    max-height: 79vh;
+}
+
+.list{
+    border-right: 1px solid lightgray;
+}
+
+.list-item {
+    overflow-y: hidden;
+    max-height: 64px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+    .list-item:hover{
+        background: #609fe2;
+        color: white;
+    }

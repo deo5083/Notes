@@ -2,7 +2,6 @@ import React from 'react';
 import {Toolbar} from './Toolbar';
 import List from './List';
 import Editor from './Editor';
-
 import '../style/styles.css';
 
 function App() {
@@ -16,6 +15,7 @@ function App() {
       <hr/>
 
       <div className="row expand">
+      
         <div className="col-md-3">
           <List />
         </div>

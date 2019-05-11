@@ -1,11 +1,13 @@
 import React from 'react';
 
-function Editor() {
-  return (
-    <div>
-        col-8
-    </div>
-  );
+class Editor extends React.Component {
+ render() {
+    return (
+      <textarea id="editor"/>
+
+    );
+  }
+  
 }
 
 export default Editor;
