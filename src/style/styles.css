@@ -8,7 +8,7 @@
 
 .scrollable {
     overflow-y: auto;
-    max-height: 79vh;
+    height: 78vh;
 }
 
 .list{
@@ -22,7 +22,15 @@
     border-radius: 5px;
     margin-bottom: 5px;
 }
+    
     .list-item:hover{
         background: #609fe2;
         color: white;
     }
+    .list-item:focus{
+        background: #4079b6;
+        outline: none;
+        color: white;
+        opacity: 1;
+    }    
+    
