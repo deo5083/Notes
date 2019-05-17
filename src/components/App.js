@@ -3,6 +3,7 @@ import {Toolbar} from './Toolbar';
 import List from './List/List';
 import Editor from './Editor';
 import '../style/styles.css';
+//require('bootstrap');
 
 function App() {
   return (

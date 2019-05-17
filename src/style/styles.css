@@ -26,11 +26,13 @@
     .list-item:hover{
         background: #609fe2;
         color: white;
+        cursor: pointer;
     }
-    .list-item:focus{
-        background: #4079b6;
+    
+.clickedItem{
+    background: #4079b6;
         outline: none;
         color: white;
         opacity: 1;
-    }    
+}
     

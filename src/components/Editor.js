@@ -3,8 +3,10 @@ import React from 'react';
 class Editor extends React.Component {
  render() {
     return (
-      <textarea id="editor"/>
-
+      <div>
+        
+        <textarea id="editor"/>
+      </div>
     );
   }
   
