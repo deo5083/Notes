@@ -5,7 +5,7 @@ class UserDropdownItem extends React.Component{
 
         return (
            
-            <button className="dropdown-item">{this.props.user}</button>
+            <button className="dropdown-item" onClick={this.props.handleClick}>{this.props.user}</button>
           
         );
     }
