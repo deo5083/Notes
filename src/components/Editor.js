@@ -5,7 +5,7 @@ class Editor extends React.Component {
     return (
       <div>
         
-        <textarea id="editor"/>
+        <textarea id="editor" />
       </div>
     );
   }

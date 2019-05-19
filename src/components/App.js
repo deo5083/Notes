@@ -3,7 +3,18 @@ import {Toolbar} from './Toolbar';
 import List from './List/List';
 import Editor from './Editor';
 import '../style/styles.css';
-//require('bootstrap');
+
+require('bootstrap/dist/css/bootstrap.css');
+
+require('font-awesome/css/font-awesome.min.css');
+require('codemirror/lib/codemirror.css');
+require('froala-editor/css/froala_editor.pkgd.css');
+require('froala-editor/css/froala_style.min.css');
+
+require('codemirror/lib/codemirror.js');
+require('codemirror/mode/xml/xml.js');
+
+
 
 function App() {
   return (

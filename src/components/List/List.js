@@ -1,26 +1,58 @@
 import React from 'react';
 import ListItem from './ListItem';
 import Search from '../Search';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import {selectNote} from '../../actions/index';
 
-function List() {
-  return (
-    <div className="">
+class List extends React.Component {
+  
+  generateList(){
+    if(this.props.user){
 
-        <Search/>
-        
-        <hr/>
-        
-        <div className="scrollable">
-          
-          <ListItem title="test"/>
-          <ListItem title="test"/>
-          <ListItem title="test"/>
-          <ListItem title="test"/>
-
+      return this.props.user.notes.map((note, i) => {
+        return (
+            <ListItem title={note.title} key={i} handleClick={() => this.props.selectNote(note)}/> 
+        );
+      });
+      
+    } else {
+      return "";
+    }
+      
+  }
+  
+  render() {
+      return (
+        <div className="">
+    
+            <Search/>
+            
+            <hr/>
+            
+            <div className="scrollable">
+              
+              {this.generateList()}
+              
+    
+            </div>
+    
         </div>
-
-    </div>
-  );
+      );
+  }
+  
 }
 
-export default List;
+function mapStateToProps(state){
+  return {
+      user: state.activeUser
+  }
+}
+
+function matchDispatchToProps(dispatch){
+  return bindActionCreators({
+      selectNote: selectNote
+  }, dispatch);
+}
+
+export default connect(mapStateToProps, matchDispatchToProps)(List);
