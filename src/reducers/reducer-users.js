@@ -1,4 +1,3 @@
-
 export default function() {
 
     return [
@@ -7,7 +6,7 @@ export default function() {
             id: 1
             ,first: "Michael"
             ,last: "Scott"
-            ,notes: [
+            ,notes: [ 
                 {
                     title: "The boss"
                     , content: "I am the best boss"
@@ -15,6 +14,10 @@ export default function() {
                 {
                     title: "Toby"
                     , content: "I am not a fan"
+                },
+                {
+                    title: "Jan"
+                    , content: "Is my boss"
                 }
 
             ]

@@ -1,26 +1,50 @@
 import React from 'react';
 import ListItem from './ListItem';
 import Search from '../Search';
+import {connect} from 'react-redux';
 
-function List() {
-  return (
-    <div className="">
+class List extends React.Component {
+  
+  generateList(){
+    if(this.props.user){
 
-        <Search/>
-        
-        <hr/>
-        
-        <div className="scrollable">
-          
-          <ListItem title="test"/>
-          <ListItem title="test"/>
-          <ListItem title="test"/>
-          <ListItem title="test"/>
-
+      return this.props.user.notes.map((note, i) => {
+        return (
+            <ListItem title={note.title} key={i}/> //need to update component. it doesnt create a new one
+        );
+      });
+      
+    } else {
+      return "";
+    }
+      
+  }
+  
+  render() {
+      return (
+        <div className="">
+    
+            <Search/>
+            
+            <hr/>
+            
+            <div className="scrollable" id="list">
+              
+              {this.generateList()}
+              
+    
+            </div>
+    
         </div>
-
-    </div>
-  );
+      );
+  }
+  
 }
 
-export default List;
+function mapStateToProps(state){
+  return {
+      user: state.activeUser
+  }
+}
+
+export default connect(mapStateToProps)(List);
