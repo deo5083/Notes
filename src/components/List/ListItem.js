@@ -1,5 +1,7 @@
 import React from 'react';
 import '../../style/styles.css';
+import {connect} from 'react-redux';
+
 
 class ListItem extends React.Component {
   constructor(props) {
@@ -12,37 +14,46 @@ class ListItem extends React.Component {
     this.handleClick = this.handleClick.bind(this);
     
   }
-  
+
+  componentDidUpdate(prevProps){
+    if (this.props.title !== prevProps.title) {
+      this.updateState();
+      this.removeActiveClass();
+    }
+  }
 
   componentDidMount(){
     this.updateState();
   }
+
   updateState(){
     this.setState({
       title: this.props.title
     });
   }
 
-  handleClick(element){
-    
+  removeActiveClass(){
     const items = document.getElementsByName('items');
-
     for (let i = 0; i < items.length; i++) {
       items[i].classList.remove('clickedItem');
-      
     }
+  }
+
+  handleClick(element){
+    
+    this.removeActiveClass();
     
     element.currentTarget.classList.add('clickedItem');
 
+    this.props.handleClick();
 
   }
+
   render(){
-    let classes = "list-item";
   
     return (
     
-
-      <div name="items" className={classes} onClick={this.handleClick}>
+      <div name="items" className="list-item" onClick={this.handleClick}>
           <div className="card-body">
               {this.state.title}
           </div>
@@ -53,4 +64,10 @@ class ListItem extends React.Component {
   
 }
 
-export default ListItem;
+function mapStateToProps(state){
+  return {
+      user: state.activeUser
+  }
+}
+
+export default connect(mapStateToProps)(ListItem);

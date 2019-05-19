@@ -5,3 +5,12 @@ export const selectUser = (user) => {
         , payload: user
     };
 };
+
+export const selectNote = (note) => {
+    console.log("note title: " + note.title);
+
+    return {
+        type: "NOTE_SELECTED"
+        , payload: note
+    };
+}
